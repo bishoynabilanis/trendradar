@@ -108,8 +108,25 @@ def nav(active, slugs):
     items = [("", "Home")] + [(s, l) for s, l, *_ in TOPICS if s in slugs]
     return "".join(f'<a href="{BASE}{s + "/" if s else ""}"{" class=on" if s == active else ""}>{l}</a>' for s, l in items)
 
+def h1_plain(h): return re.sub(r'<[^>]+>', '', h)
+
+def fit_title(t, n=60):
+    suf = " | Trend Radar AI"
+    if len(t) <= n: return t
+    body = t[:-len(suf)] if t.endswith(suf) else t
+    room = n - len(suf)
+    cut = body[:room].rsplit(" ", 1)[0].rstrip(" ,:;-|.") if len(body) > room else body
+    return cut + suf
+
+def fit_desc(d, n=158):
+    if len(d) <= n: return d
+    return d[:n - 1].rsplit(" ", 1)[0].rstrip(" ,:;-|") + "."
+
 def page(url, title, desc, h1, lead, vs, slugs, active, hero=False, extra_ld=None, extra_html=""):
-    ld = jsonld(vs, (extra_ld or []))
+    title, desc = fit_title(title), fit_desc(desc)
+    crumbs = [{"@type": "ListItem", "position": 1, "name": "Trend Radar AI", "item": BASE}]
+    if url != BASE: crumbs.append({"@type": "ListItem", "position": 2, "name": h1_plain(h1), "item": url})
+    ld = jsonld(vs, (extra_ld or []) + [{"@type": "BreadcrumbList", "itemListElement": crumbs}])
     return f'''<!doctype html>
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -118,7 +135,9 @@ def page(url, title, desc, h1, lead, vs, slugs, active, hero=False, extra_ld=Non
 <link rel="canonical" href="{url}">
 <link rel="alternate" type="application/atom+xml" title="Trend Radar AI: latest stories" href="{BASE}feed.xml">
 <meta property="og:title" content="{html.escape(title)}"><meta property="og:description" content="{html.escape(desc)}">
-<meta property="og:type" content="website"><meta property="og:url" content="{url}">
+<meta property="og:type" content="website"><meta property="og:url" content="{url}"><meta property="og:site_name" content="Trend Radar AI"><meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="{html.escape(title)}"><meta name="twitter:description" content="{html.escape(desc)}">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"><meta name="theme-color" content="#050b1a">
 <meta property="og:image" content="https://img.youtube.com/vi/{vs[0]["id"] if vs else ""}/hqdefault.jpg">
 <script type="application/ld+json">{ld}</script>
 <style>{CSS}</style></head><body>
