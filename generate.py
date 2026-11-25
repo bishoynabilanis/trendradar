@@ -116,6 +116,7 @@ def page(url, title, desc, h1, lead, vs, slugs, active, hero=False, extra_ld=Non
 <title>{html.escape(title)}</title>
 <meta name="description" content="{html.escape(desc)}">
 <link rel="canonical" href="{url}">
+<link rel="alternate" type="application/atom+xml" title="Trend Radar AI: latest stories" href="{BASE}feed.xml">
 <meta property="og:title" content="{html.escape(title)}"><meta property="og:description" content="{html.escape(desc)}">
 <meta property="og:type" content="website"><meta property="og:url" content="{url}">
 <meta property="og:image" content="https://img.youtube.com/vi/{vs[0]["id"] if vs else ""}/hqdefault.jpg">
@@ -186,6 +187,13 @@ def main():
     sm = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' + "".join(
         f"<url><loc>{u}</loc><lastmod>{d}</lastmod></url>" for u, d in urls) + "</urlset>\n"
     open(os.path.join(ROOT, "sitemap.xml"), "w").write(sm)
+    ents = "".join(
+        f"<entry><title>{html.escape(clean(v['title']))}</title><link rel=\"alternate\" href=\"{html.escape(v['url'])}\"/><id>yt:video:{v['id']}</id><updated>{v['date']}T00:00:00Z</updated><summary>{html.escape(v.get('desc',''))}</summary></entry>"
+        for v in vids[:30])
+    atom = ('<?xml version="1.0" encoding="UTF-8"?>\n<feed xmlns="http://www.w3.org/2005/Atom"><title>Trend Radar AI: latest stories</title>'
+        f'<subtitle>AI first, world trends. Short videos from Trend Radar AI.</subtitle><link rel="self" href="{BASE}feed.xml"/><link rel="alternate" href="{BASE}"/>'
+        f'<id>{BASE}</id><updated>{vids[0]["date"]}T00:00:00Z</updated><author><name>Trend Radar AI</name></author>' + ents + "</feed>\n")
+    open(os.path.join(ROOT, "feed.xml"), "w", encoding="utf8").write(atom)
     open(os.path.join(ROOT, "robots.txt"), "w").write(f"User-agent: *\nAllow: /\nSitemap: {BASE}sitemap.xml\n")
     print("videos:", len(vids), {s: len(by[s]) for s in by})
 
