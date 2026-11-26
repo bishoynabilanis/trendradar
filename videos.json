@@ -1,31 +1,75 @@
 [
  {
+  "id": "xnEo5LBpRSQ",
+  "title": "ElevenLabs $33B Valuation Talks: AI Voice Startup Funding Round #Shorts",
+  "date": "2026-11-26",
+  "ts": "2026-11-26T06:09:33+00:00",
+  "url": "https://www.youtube.com/shorts/xnEo5LBpRSQ",
+  "desc": "ElevenLabs, the AI voice startup, is in early talks for a funding round at a $33 billion valuation, Bloomberg reports. The round is planned for the first quarter of 2027, though some investors want it"
+ },
+ {
+  "id": "tlgsuV5iS2A",
+  "title": "Amodei Rejects 'Surrender Free Will to AI' Claim: Anthropic CEO #Shorts",
+  "date": "2026-11-26",
+  "ts": "2026-11-26T06:32:05+00:00",
+  "url": "https://www.youtube.com/shorts/tlgsuV5iS2A",
+  "desc": "Anthropic CEO Dario Amodei rejected claims that he wants humans to surrender free will to AI, calling the idea \"absurd\" in a long post on X on Wednesday. The post responded to an Axios report that, ci"
+ },
+ {
+  "id": "roMUsf2qFrI",
+  "title": "Nvidia Halts AI Server Shipments to 4 Southeast Asian Countries, FT Reports #Shorts",
+  "date": "2026-11-26",
+  "ts": "2026-11-26T06:39:46+00:00",
+  "url": "https://www.youtube.com/shorts/roMUsf2qFrI",
+  "desc": "Nvidia has asked partners to halt shipments of AI servers to Malaysia, Singapore, Thailand and Indonesia, the Financial Times reported, as relayed by The National. Dell and Supermicro told customers N"
+ },
+ {
+  "id": "JO6cEHtfbD8",
+  "title": "Euclid Finds Most Distant Quasar Ever: Black Hole 630M Years After Big Bang #Shorts",
+  "date": "2026-11-26",
+  "ts": "2026-11-26T06:47:08+00:00",
+  "url": "https://www.youtube.com/shorts/JO6cEHtfbD8",
+  "desc": "The European Space Agency says its Euclid telescope has found the most distant quasar to date, seen as it was just 630 million years after the Big Bang, 40 million years further back than Euclid's pre"
+ },
+ {
+  "id": "IdqUmMOvdyk",
+  "title": "SpaceX Gets FCC OK for 1 Million AI Satellites: Starmind Explained #Shorts",
+  "date": "2026-11-26",
+  "ts": "2026-11-26T06:39:01+00:00",
+  "url": "https://www.youtube.com/shorts/IdqUmMOvdyk",
+  "desc": "The FCC has authorized SpaceX to deploy up to 1 million \"Starmind\" satellites to act as data centers in orbit, the first approval of its kind, BBC reports. The license requires deployment to begin by "
+ },
+ {
   "id": "nQtBj7Uqeas",
   "title": "Anthropic and OpenAI Say They Solved VP vs VNP: What It Means #Shorts",
   "date": "2026-11-25",
   "url": "https://www.youtube.com/shorts/nQtBj7Uqeas",
-  "desc": "Anthropic and OpenAI each posted a proof on Nov 23 that VNP is not contained in VP, a problem related to P versus NP. Both came with Lean formal versions. Anthropic says no human mathematician has che"
+  "desc": "Anthropic and OpenAI each posted a proof on Nov 23 that VNP is not contained in VP, a problem related to P versus NP. Both came with Lean formal versions. Anthropic says no human mathematician has che",
+  "ts": "2026-11-25T06:26:11+00:00"
  },
  {
   "id": "iC9GVpjA15g",
   "title": "Two Libyan Officers Die After Drone Attack on Russian Warship at Benghazi #Shorts",
   "date": "2026-11-25",
   "url": "https://www.youtube.com/shorts/iC9GVpjA15g",
-  "desc": "Two Libyan naval officers died Tuesday of wounds from a drone attack on a Russian warship moored at the Benghazi naval base in eastern Libya, according to AP, Anadolu and France 24. Anadolu reports th"
+  "desc": "Two Libyan naval officers died Tuesday of wounds from a drone attack on a Russian warship moored at the Benghazi naval base in eastern Libya, according to AP, Anadolu and France 24. Anadolu reports th",
+  "ts": "2026-11-25T09:51:32+00:00"
  },
  {
   "id": "gJ4g3lWRbUw",
   "title": "The AI Selloff Hits Asia: Kospi, Samsung, TSMC Plunge #Shorts",
   "date": "2026-11-25",
   "url": "https://www.youtube.com/shorts/gJ4g3lWRbUw",
-  "desc": "Asian stocks fell sharply on Wednesday as the AI selloff spread. South Korea's Kospi lost 5.6% and Samsung fell 9.1%. Taiwan's market fell more than 5% and TSMC lost about 8%. The US chip index fell a"
+  "desc": "Asian stocks fell sharply on Wednesday as the AI selloff spread. South Korea's Kospi lost 5.6% and Samsung fell 9.1%. Taiwan's market fell more than 5% and TSMC lost about 8%. The US chip index fell a",
+  "ts": "2026-11-25T06:22:28+00:00"
  },
  {
   "id": "a_-VOoTsCSA",
   "title": "Microsoft Declares \"Code Red\" After Its Historic 24-Hour Outage #Shorts",
   "date": "2026-11-25",
   "url": "https://www.youtube.com/shorts/a_-VOoTsCSA",
-  "desc": "Microsoft has declared a \"Code Red\" to overhaul how it prevents and responds to major failures after the Nov 12-13 outage, according to internal memos reviewed by Reuters. The outage lasted about 24 h"
+  "desc": "Microsoft has declared a \"Code Red\" to overhaul how it prevents and responds to major failures after the Nov 12-13 outage, according to internal memos reviewed by Reuters. The outage lasted about 24 h",
+  "ts": "2026-11-25T06:52:00+00:00"
  },
  {
   "id": "VaVWI6H1EXg",
@@ -39,21 +83,24 @@
   "title": "Anthropic Lets Claude Artifacts Become Mac and Windows Desktop Apps #Shorts",
   "date": "2026-11-25",
   "url": "https://www.youtube.com/shorts/USBxm8PDi_Q",
-  "desc": "Anthropic says Claude artifacts can now be installed as desktop apps. The \"Install as app\" feature is rolling out in beta on Mac and Windows. An installed artifact gets its own icon and window, can se"
+  "desc": "Anthropic says Claude artifacts can now be installed as desktop apps. The \"Install as app\" feature is rolling out in beta on Mac and Windows. An installed artifact gets its own icon and window, can se",
+  "ts": "2026-11-25T07:20:29+00:00"
  },
  {
   "id": "Ow83GpOmcgw",
   "title": "A 26-Year-Old Computer Science Problem May Be Solved: Linear-Time MST #Shorts",
   "date": "2026-11-25",
   "url": "https://www.youtube.com/shorts/Ow83GpOmcgw",
-  "desc": "Three researchers posted a paper on Nov 23 claiming the first deterministic linear-time algorithm for the minimum spanning tree problem, the first improvement since Chazelle in 2000. One author thanks"
+  "desc": "Three researchers posted a paper on Nov 23 claiming the first deterministic linear-time algorithm for the minimum spanning tree problem, the first improvement since Chazelle in 2000. One author thanks",
+  "ts": "2026-11-25T06:34:25+00:00"
  },
  {
   "id": "O39lAODun_w",
   "title": "China Launches Its First Foreign Astronaut: Pakistan's Zeeshan Ali Docks at Tiangong #Shorts",
   "date": "2026-11-25",
   "url": "https://www.youtube.com/shorts/O39lAODun_w",
-  "desc": "China launched Shenzhou-24 on Nov 25 with Chinese astronauts Tang Hongbo and Wu Yi and Pakistan's Muhammad Zeeshan Ali, the first Pakistani in orbit and the first foreign astronaut on a Chinese crewed"
+  "desc": "China launched Shenzhou-24 on Nov 25 with Chinese astronauts Tang Hongbo and Wu Yi and Pakistan's Muhammad Zeeshan Ali, the first Pakistani in orbit and the first foreign astronaut on a Chinese crewed",
+  "ts": "2026-11-25T06:50:34+00:00"
  },
  {
   "id": "G_ki9HBKDvo",
@@ -74,20 +121,23 @@
   "title": "AI-Assisted Hacking Campaign Targets Check Point Servers, GreyNoise Says #Shorts",
   "date": "2026-11-25",
   "url": "https://www.youtube.com/shorts/C7a50H8ZTSc",
-  "desc": "Security firm GreyNoise says a campaign using AI-enabled offensive tools targeted at least 22 organizations through Check Point Security Management servers, according to SecurityWeek, Cybersecurity Di"
+  "desc": "Security firm GreyNoise says a campaign using AI-enabled offensive tools targeted at least 22 organizations through Check Point Security Management servers, according to SecurityWeek, Cybersecurity Di",
+  "ts": "2026-11-25T11:11:07+00:00"
  },
  {
   "id": "2Bb7VhWsUQ8",
   "title": "Oil Slips Toward $90 as Surplus Fears Outweigh Hormuz Attacks #Shorts",
   "date": "2026-11-25",
   "url": "https://www.youtube.com/shorts/2Bb7VhWsUQ8",
-  "desc": "Oil prices fell on Wednesday, with Brent around $90 a barrel, as surplus expectations outweighed ship attacks near the Strait of Hormuz, according to CNBC (Reuters), Economy Middle East and Anadolu. T"
+  "desc": "Oil prices fell on Wednesday, with Brent around $90 a barrel, as surplus expectations outweighed ship attacks near the Strait of Hormuz, according to CNBC (Reuters), Economy Middle East and Anadolu. T",
+  "ts": "2026-11-25T11:07:42+00:00"
  },
  {
   "id": "-kBGJQF9O7A",
   "title": "OpenAI Says GPT-6 Can Design Proteins: What the Lab Tests Show #Shorts",
   "date": "2026-11-25",
   "url": "https://www.youtube.com/shorts/-kBGJQF9O7A",
-  "desc": "OpenAI says its GPT-6.2 model designed small proteins using only reasoning and code, and lab tests found at least one binder for each of five targets. Nature reports about 11% of designs bound their t"
+  "desc": "OpenAI says its GPT-6.2 model designed small proteins using only reasoning and code, and lab tests found at least one binder for each of five targets. Nature reports about 11% of designs bound their t",
+  "ts": "2026-11-25T06:11:11+00:00"
  }
 ]
