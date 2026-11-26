@@ -40,12 +40,13 @@ def fetch_feed():
     for e in re.findall(r"<entry>.*?</entry>", x, re.S):
         vid = re.search(r"<yt:videoId>(.*?)<", e).group(1)
         title = html.unescape(re.search(r"<title>(.*?)</title>", e).group(1))
-        pub = re.search(r"<published>(.*?)<", e).group(1)[:10]
+        pub_full = re.search(r"<published>(.*?)<", e).group(1)
+        pub = pub_full[:10]
         url = re.search(r'<link rel="alternate" href="([^"]+)"', e)
         url = url.group(1) if url else f"https://www.youtube.com/watch?v={vid}"
         desc = re.search(r"<media:description>(.*?)</media:description>", e, re.S)
         desc = html.unescape(desc.group(1)).strip().split("\n")[0][:200] if desc else ""
-        out.append({"id": vid, "title": title, "date": pub, "url": url, "desc": desc})
+        out.append({"id": vid, "title": title, "date": pub, "ts": pub_full, "url": url, "desc": desc})
     return out
 
 def load_store():
@@ -101,7 +102,7 @@ def jsonld(vs, extra):
                   "description": v["desc"] or clean(v["title"]),
                   "thumbnailUrl": f"https://img.youtube.com/vi/{v['id']}/hqdefault.jpg",
                   "contentUrl": v["url"], "embedUrl": f"https://www.youtube.com/embed/{v['id']}",
-                  "uploadDate": v["date"]})
+                  "uploadDate": v.get("ts") or (v["date"] + "T00:00:00+00:00")})
     return json.dumps({"@context": "https://schema.org", "@graph": g}, ensure_ascii=False).replace("</", "<\\/")
 
 def nav(active, slugs):
