@@ -204,6 +204,12 @@ def main():
                  extra_ld=org + [{"@type": "CollectionPage", "name": title, "url": u}])
         open(os.path.join(d, "index.html"), "w", encoding="utf8").write(p)
         urls.append((u, by[slug][0]["date"]))
+    adir = os.path.join(ROOT, "articles")
+    if os.path.isdir(adir):
+        for a in sorted(os.listdir(adir)):
+            ap = os.path.join(adir, a, "index.html")
+            if os.path.isfile(ap):
+                urls.append((f"{BASE}articles/{a}/", date.fromtimestamp(os.path.getmtime(ap)).isoformat()))
     sm = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' + "".join(
         f"<url><loc>{u}</loc><lastmod>{d}</lastmod></url>" for u, d in urls) + "</urlset>\n"
     open(os.path.join(ROOT, "sitemap.xml"), "w").write(sm)
