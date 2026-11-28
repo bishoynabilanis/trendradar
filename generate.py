@@ -159,7 +159,7 @@ def page(url, title, desc, h1, lead, vs, slugs, active, hero=False, extra_ld=Non
 <section><div class="cta"><h2>Never miss a trend</h2><p>New videos every day.</p><a class="btn yt" href="{CH}?sub_confirmation=1">Subscribe free</a></div></section>
 </div>
 <a class="bar" href="{CH}?sub_confirmation=1">Subscribe to Trend Radar AI</a>
-<footer>Trend Radar AI &middot; <a href="{CH}">YouTube channel</a></footer>
+<footer>Trend Radar AI &middot; <a href="{CH}">YouTube channel</a> &middot; X: <a href="https://x.com/TrendRadarAIHQ" rel="noopener">https://x.com/TrendRadarAIHQ</a></footer>
 </body></html>'''
 
 def main():
