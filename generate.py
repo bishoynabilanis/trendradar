@@ -162,6 +162,166 @@ def page(url, title, desc, h1, lead, vs, slugs, active, hero=False, extra_ld=Non
 <footer>Trend Radar AI &middot; <a href="{CH}">YouTube channel</a> &middot; X: <a href="https://x.com/TrendRadarAIHQ" rel="noopener">https://x.com/TrendRadarAIHQ</a></footer>
 </body></html>'''
 
+# ---- per-video article pages: built only from each video's cleared script and sources ----
+X_URL = "https://x.com/TrendRadarAIHQ"
+AI_NOTE = "The script, voice and slides of the video are AI-generated. No real footage or people are shown."
+ARTICLES = [
+ {"slug": "pkg26-us-disables-ship-iran-blockade", "yt": "HTWeyfD2sAk", "topic": ("middle-east", "Middle East"),
+  "title": "CENTCOM: US disables ship over Iran blockade",
+  "script": ["CENTCOM said Friday, November 27, a US military aircraft disabled a commercial ship Thursday, November 26, that it says tried to run the naval blockade of Iran.",
+   "Precision munitions struck the stern of the Palau-flagged Pacific Archer in the Gulf of Oman, after it left Bandar Abbas. The propulsion was ultimately disabled; the civilian crew was unharmed.",
+   "Times Now says the Pacific Archer is at least the fifteenth vessel disabled since blockade operations started in April.",
+   "Mohammad Mokhber, an adviser to Iran's supreme leader, said, per state media, that Hormuz will not reopen and the blockade will not stay. No details.",
+   "The strike details are from the CENTCOM statement; no independent confirmation, no response from the ship's owner or crew."],
+  "sources": [("CENTCOM statement (Nov 27), via DVIDS", "https://www.dvidshub.net/news/580348/us-forces-disable-commercial-vessel-during-blockade-enforcement-against-iran"),
+   ("Times Now", "https://www.timesnownews.com/world/middle-east/us-strikes-iran-bound-ship-gulf-of-oman-centcom-mine-strikes-strait-of-hormuz-article-156577281"),
+   ("Reuters, via Arab News", "https://www.arabnews.com/middle-east/us-disables-ship-trying-to-leave-iran-as-tehran-vows-to-confront-blockade-3014303")]},
+ {"slug": "pkg27-msf-gaza-clinic-strike", "yt": "8JLCMlQCEIE", "topic": ("middle-east", "Middle East"),
+  "title": "MSF says Israeli strike killed two staff; army disputes",
+  "script": ["Doctors Without Borders says an Israeli strike hit one of its Gaza clinics on Friday, November 27, killing two of its staff, both watchmen.",
+   "MSF says the clinic was clearly marked and its location was known to the Israeli military, calling it a direct hit. MSF says the total of its staff killed in Gaza is now seventeen.",
+   "The Israeli military says the two men were militants working as MSF watchmen, and says one was an artillery squad commander in Hamas's military wing.",
+   "Middle East Eye reports the clinic is close to al-Shifa Hospital and that the death toll from Israeli attacks across Gaza on Friday, November 27, reached eight.",
+   "MSF had not responded to the army's claim in the coverage we checked."],
+  "sources": [("MSF statement", "https://prezly.msf.org.uk/msf-gaza-israeli-strike-kills-two-msf-colleagues"),
+   ("Times of Israel (for the army's statement)", "https://www.timesofisrael.com/idf-says-gaza-strike-killed-two-terrorists-working-for-doctors-without-borders/"),
+   ("Middle East Eye (for location and the November 27 toll)", "https://www.middleeasteye.net/live-blog/live-blog-update/doctors-without-borders-says-two-staff-killed-israeli-direct-hit-gaza")]},
+ {"slug": "pkg28-ai-labs-encryption-rumors", "yt": "6UmoacLO7gs", "topic": ("ai", "AI"),
+  "title": "AI labs may hold encryption 'bombshell'",
+  "script": ["The Guardian reports that top computer scientists warn leading AI labs may be sitting on breakthroughs that could shake the encryption protecting banks and governments.",
+   "Scott Aaronson wrote he is virtually certain, from multiple reliable sources, that AI labs are sitting on one or more cryptography bombshells, the Guardian reports.",
+   "The rumors follow AI models solving decades-old math problems. No lab has announced any encryption finding, and OpenAI and Anthropic did not comment.",
+   "Bank of England governor Andrew Bailey said AI companies should be cautious about releasing new models.",
+   "Experts quoted by the Guardian say a breakthrough could force rapid encryption upgrades, or prove current systems safer than thought."],
+  "sources": [("The Guardian (Nov 28)", "https://www.theguardian.com/technology/2026/nov/28/ai-artificial-intelligence-encryption-global-chaos"),
+   ("Nature (Nov 26)", "https://www.nature.com/articles/d41586-026-03875-6"),
+   ("The Independent (Nov 27)", "https://www.independent.co.uk/tech/encryption-ai-safety-security-privacy-artificial-intelligence-b3092983.html")]},
+ {"slug": "pkg29-uswnt-qualifies-2027-world-cup", "yt": "u9h6geVrxtI", "topic": ("world", "World News"),
+  "title": "USWNT qualifies for 2027 World Cup after 8-0 win",
+  "script": ["The US women's national team has qualified for the 2027 Women's World Cup, beating El Salvador 8-0 in the Concacaf W Championship quarterfinals on Friday, November 27, AP reports.",
+   "Ashley Sanchez scored a hat trick, all three goals in the first half, AP says. Concacaf says the US scored seven first-half goals, the first time it has done that since January 2012.",
+   "Jamaica also clinched a World Cup berth earlier on Friday, November 27, with a 3-0 win over Costa Rica, AP reports.",
+   "US Soccer says the US plays Jamaica in the semifinals on Tuesday, December 1. The tournament runs June 24 to July 25, 2027, in Brazil."],
+  "sources": [("AP (Nov 28)", "https://apnews.com/article/uswnt-el-salvador-womens-world-cup-concacaf-a06a0e4c716c4e302bac79007f53ed56"),
+   ("Concacaf (Nov 28)", "https://www.concacaf.com/competitions/w-championship/news/uswnt-qualifies-to-women-s-world-cup-2027"),
+   ("US Soccer (Nov 28)", "https://www.ussoccer.com/stories/2026/11/uswnt/instant-recap-usa-qualifies-fifa-womens-world-cup-2027-brazil")]},
+ {"slug": "pkg30-el-nino-floods-peru-ecuador", "yt": "s3skktnKpu0", "topic": ("world", "World News"),
+  "title": "El Nino floods hit Peru and Ecuador",
+  "script": ["Floods linked to an exceptionally strong El Nino are hitting cities in Peru and Ecuador, Al Jazeera reports, citing AFP.",
+   "In Piura, northern Peru, waist-high water filled streets after about 12 hours of rain on Thursday, November 26, Al Jazeera reports. Peru's civil defense chief said about 2,000 families could be affected, according to preliminary estimates, Anadolu reports.",
+   "In Ecuador, the risk management agency reported 34 deaths and 47,000 people affected on Friday, November 27, per AFP.",
+   "EFE, citing the same agency on Thursday, November 26, reported 30 deaths and more than 121,000 affected since late August. The counts differ.",
+   "Peru's weather service warned rain could continue for four more days, Anadolu reports."],
+  "sources": [("Al Jazeera, citing AFP (Nov 28)", "https://www.aljazeera.com/news/2026/11/28/el-nino-linked-deluges-flood-cities-in-peru-ecuador"),
+   ("Anadolu Agency, citing RPP (Nov 27)", "https://www.aa.com.tr/en/americas/heavy-rains-flood-homes-in-perus-piura-affecting-hundreds-of-families/4140922"),
+   ("EFE via El Comercio, in Spanish (Nov 26)", "https://elcomercio.pe/mundo/latinoamerica/fenomeno-el-nino-lluvias-ligadas-al-fenomeno-climatico-ya-han-causado-30-muertos-y-mas-de-121000-afectados-en-ecuador-sngr-ultimas-noticia/")]},
+ {"slug": "pkg31-hera-crater-asteroid-dimorphos", "yt": "b54tkp1prI0", "topic": ("tech", "Tech"),
+  "title": "Hera finds stadium-sized crater on asteroid Dimorphos",
+  "script": ["The European Space Agency says its Hera spacecraft found a stadium-sized crater on the asteroid Dimorphos, left by NASA's DART impact in 2022.",
+   "ESA says the crater flattened the face DART hit and extends across the asteroid's entire width, and that Dimorphos is now tumbling chaotically.",
+   "ESA also reports hundreds of previously unknown boulders, a few metres in size, orbiting the asteroid pair. Science magazine says whether they are impact debris is not yet confirmed.",
+   "Science reports the boulders worry mission managers, who want to send two shoebox-sized CubeSats closer. Space.com says one carries radar to probe the interior.",
+   "ESA presented the findings on Wednesday, November 25."],
+  "sources": [("ESA", "https://www.esa.int/articles/about-us/directorates/operations/space-safety/hera/hera-reveals-stadium-sized-asteroid-crater-left-after-spacecraft-impact"),
+   ("Science", "https://www.science.org/content/article/when-humans-walloped-asteroid-we-left-stadium-size-crater"),
+   ("Space.com", "https://www.space.com/astronomy/asteroids/hera-spacecraft-gets-1st-up-close-look-at-stadium-sized-hole-punched-in-asteroid-by-nasa-dart-mission")]},
+ {"slug": "pkg32-argentina-central-bank-printing-money", "yt": "Oo30DnzM2CQ", "topic": ("business", "Business and Markets"),
+  "title": "Argentina bans central bank from printing money for government",
+  "script": ["The Associated Press reports Argentina's Congress voted Thursday, November 26, to bar the central bank from printing money to pay the government's bills.",
+   "The AP says the Chamber of Deputies approved it 141 to zero, with 99 abstentions, and the bank's \"primary and fundamental mission\" is now to preserve the peso's value.",
+   "Per DPA, the bank can no longer give advances to the Finance Ministry or directly buy newly issued government bonds.",
+   "The Telegraph reports October inflation was thirty-three per cent, down from more than 211 per cent in 2023, while poverty has surged.",
+   "DPA says Argentina may have slipped into a technical recession, with full third-quarter figures due in mid-December."],
+  "sources": [("AP", "https://apnews.com/article/javier-milei-central-bank-economy-argentina-peso-primaries-paso-e4598186ef6cbcf05ecc598788c52cec"),
+   ("DPA via Yahoo Finance", "https://finance.yahoo.com/economy/policy/articles/argentina-approves-mileis-reform-restricting-074834530.html"),
+   ("The Telegraph", "https://www.telegraph.co.uk/world-news/2026/11/27/milei-bans-central-bank-from-printing-money-recession/")]},
+ {"slug": "pkg33-openai-countersues-apple-trade-secrets", "yt": "rQOuUd2wh-c", "topic": ("ai", "AI"),
+  "title": "OpenAI countersues Apple over trade secrets",
+  "script": ["Reuters reports OpenAI sued Apple on Friday, November 27, accusing it of stealing OpenAI's trade secrets, after Apple sued OpenAI over alleged employee poaching.",
+   "In its California filing, OpenAI says Apple rehired a former employee who had accessed information on a new device and OpenAI's hardware roadmap, Reuters reports.",
+   "Reuters says OpenAI also accuses Apple of discouraging hardware suppliers from working on future OpenAI devices.",
+   "Apple told CBS News the counterclaims are \"a transparent attempt to distract from the substance of Apple's lawsuit.\"",
+   "OpenAI has denied Apple's allegations, Reuters says. Apple's original case is set for trial on July 19, 2027, according to 9to5Mac."],
+  "sources": [("Reuters", "https://www.reuters.com/5f374b32b07b/technology/openai-countersues-apple-stealing-trade-secrets-ft-reports-2026-11-27/"),
+   ("CBS News", "https://www.cbsnews.com/news/openai-countersues-apple-trade-secrets-lawsuit/"),
+   ("9to5Mac", "https://9to5mac.com/2026/11/27/openai-countersues-apple-alleging-trade-secret-theft-and-supplier-threats/")]},
+]
+ART_DATE = "2026-11-28"
+ART_CSS = ("body{font-family:system-ui,sans-serif;max-width:720px;margin:0 auto;padding:16px;line-height:1.65;background:#050b1a;color:#e8eefc;font-size:17px}"
+           "a{color:#6cb6ff}h1{line-height:1.25}h2{margin-top:1.6em}.v{position:relative;padding-top:56.25%;margin:1em 0}"
+           ".v iframe{position:absolute;inset:0;width:100%;height:100%;border:0;border-radius:12px}"
+           ".note{border:1px solid #2a3a63;border-radius:10px;padding:10px 14px;color:#b9c7ea;font-size:15px}"
+           ".more a{display:block;padding:10px 0}footer{margin:2em 0 1em;color:#b9c7ea;font-size:15px}")
+
+def art_desc(a):
+    s = a["script"][0]
+    return fit_desc(s)
+
+def build_article(a):
+    u = f"{BASE}articles/{a['slug']}/"
+    yt = f"https://www.youtube.com/shorts/{a['yt']}"
+    t = a["title"]
+    title = fit_title(t + " | Trend Radar AI")
+    desc = art_desc(a)
+    tp_slug, tp_label = a["topic"]
+    ld = {"@context": "https://schema.org", "@graph": [
+        {"@type": "NewsArticle", "headline": t, "description": desc, "mainEntityOfPage": u,
+         "datePublished": ART_DATE, "dateModified": ART_DATE, "inLanguage": "en",
+         "author": {"@type": "Organization", "name": "Trend Radar AI", "url": BASE},
+         "publisher": {"@type": "Organization", "name": "Trend Radar AI", "url": BASE},
+         "image": f"https://img.youtube.com/vi/{a['yt']}/hqdefault.jpg",
+         "citation": [s[1] for s in a["sources"]]},
+        {"@type": "VideoObject", "name": t, "description": desc, "thumbnailUrl": f"https://img.youtube.com/vi/{a['yt']}/hqdefault.jpg",
+         "contentUrl": yt, "embedUrl": f"https://www.youtube.com/embed/{a['yt']}", "uploadDate": ART_DATE},
+        {"@type": "BreadcrumbList", "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Trend Radar AI", "item": BASE},
+            {"@type": "ListItem", "position": 2, "name": tp_label, "item": f"{BASE}{tp_slug}/"},
+            {"@type": "ListItem", "position": 3, "name": t, "item": u}]}]}
+    ldj = json.dumps(ld, ensure_ascii=False).replace("</", "<\\/")
+    E = html.escape
+    paras = "".join(f"<p>{E(s)}</p>" for s in a["script"])
+    srcs = "".join(f'<li><a href="{E(h)}" rel="noopener">{E(n)}</a></li>' for n, h in a["sources"])
+    others = "".join(f'<a href="{BASE}articles/{b["slug"]}/">{E(b["title"])}</a>' for b in ARTICLES if b is not a)
+    return f'''<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{E(title)}</title>
+<meta name="description" content="{E(desc)}">
+<link rel="canonical" href="{u}">
+<meta property="og:title" content="{E(title)}"><meta property="og:description" content="{E(desc)}"><meta property="og:type" content="article"><meta property="og:url" content="{u}"><meta property="og:site_name" content="Trend Radar AI"><meta property="og:image" content="https://img.youtube.com/vi/{a['yt']}/hqdefault.jpg">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="{E(title)}"><meta name="twitter:description" content="{E(desc)}">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<script type="application/ld+json">{ldj}</script>
+<style>{ART_CSS}</style></head><body>
+<p><a href="{BASE}">Trend Radar AI</a> / <a href="{BASE}{tp_slug}/">{E(tp_label)}</a></p>
+<article><h1>{E(t)}</h1>
+<p><time datetime="{ART_DATE}">November 28, 2026</time></p>
+<p class="note">{AI_NOTE}</p>
+{paras}
+<div class="v"><iframe src="https://www.youtube-nocookie.com/embed/{a['yt']}" title="{E(t)}" loading="lazy" allowfullscreen></iframe></div>
+<p>Watch on YouTube: <a href="{yt}">{E(t)}</a></p>
+<h2>Sources</h2>
+<ul>{srcs}</ul>
+<p class="note">{AI_NOTE} This page repeats what the video says and links the sources it used.</p>
+<p>More trends daily: <a href="{CH}">Trend Radar AI on YouTube</a> and on X: <a href="{X_URL}" rel="noopener">{X_URL}</a></p>
+<p>Which trend should we cover next? Tell us in the comments on YouTube.</p>
+<h2>More from Trend Radar AI</h2>
+<div class="more">{others}</div>
+</article>
+<footer>Trend Radar AI &middot; <a href="{CH}">YouTube channel</a> &middot; X: <a href="{X_URL}" rel="noopener">{X_URL}</a></footer>
+</body></html>'''
+
+def build_articles():
+    for a in ARTICLES:
+        d = os.path.join(ROOT, "articles", a["slug"])
+        os.makedirs(d, exist_ok=True)
+        open(os.path.join(d, "index.html"), "w", encoding="utf8").write(build_article(a))
+
+def article_list_html():
+    items = "".join(f'<a class="s" href="{BASE}articles/{a["slug"]}/"><b>{html.escape(a["title"])}</b><span>Article &middot; sources</span></a>' for a in ARTICLES)
+    return f'<section id="articles"><h2>Articles</h2><p class="sub">Each video with its sources.</p><div class="steps">{items}</div></section>'
+
+
 def main():
     store = {v["id"]: v for v in load_store()}
     try:
@@ -178,11 +338,12 @@ def main():
         for s in topics_of(v): by[s].append(v)
     live = [s for s, *_ in TOPICS if by[s]]
 
+    build_articles()
     org = [{"@type": "Organization", "name": "Trend Radar AI", "url": BASE, "sameAs": [CH]}]
     # topic hub cards for home
     hub = '<section id="topics"><h2>Browse by topic</h2><p class="sub">Pick what you care about.</p><div class="steps">' + "".join(
         f'<a class="s" href="{BASE}{s}/"><b>{l}</b><span>{len(by[s])} video{"s" if len(by[s]) != 1 else ""}</span></a>'
-        for s, l, *_ in TOPICS if s in live) + "</div></section>"
+        for s, l, *_ in TOPICS if s in live) + "</div></section>" + article_list_html()
     home = page(BASE, "Trend Radar AI | AI, tech and world trends explained in short videos",
                 trend_desc("Trend Radar AI tracks what the world is talking about, AI first. Trends in AI, tech, business and world news as clear videos and Shorts.", vids),
                 'Trend Radar <span>AI</span>',
